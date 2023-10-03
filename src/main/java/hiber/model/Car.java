@@ -10,7 +10,11 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "model")
     private String model;
+
+    @Column(name = "series")
     private int series;
 
     @OneToOne(mappedBy = "car")
@@ -68,6 +72,6 @@ public class Car {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, model, series, user);
+        return Objects.hash(id, model, series);
     }
 }
